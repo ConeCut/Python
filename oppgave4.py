@@ -24,6 +24,24 @@ def calculate_total_price(cart):
         total += prices[item] * quantity
     return total  # Return the total price
 
+def print_receipt(cart):
+    # Dictionary of item prices
+    prices = {
+        "bread": 20,
+        "milk": 15,
+        "cheese": 40,
+        "yogurt": 12
+    }
+    
+    print("\nReceipt:")
+    print(f"{'Item':<10}{'Quantity':<10}{'Price':<10}")
+    print("-" * 30)
+    
+    # Print the items in the cart with their quantities and total price per item
+    for item, quantity in cart.items():
+        if quantity > 0:  # Only print items that were added to the cart
+            print(f"{item.capitalize():<10}{quantity:<10}{prices[item] * quantity:<10} kr")
+    
 def shop():
     # Initialize a shopping cart with zero quantities for each item
     cart = {
@@ -55,9 +73,11 @@ def shop():
             print(f"You added {quantity} {item}(s) to the cart.")
             
         elif choice == "5":
-            # If the user chooses to checkout, calculate the total price
+            # If the user chooses to checkout, print the receipt and calculate the total price
+            print_receipt(cart)
             total_price = calculate_total_price(cart)
             print(f"\nThe total price for your shopping is: {total_price} kr.")
+            
             print("Thank you for shopping with us!")
             break  # Exit the loop and end the shopping process
         else:
