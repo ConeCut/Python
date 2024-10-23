@@ -29,3 +29,5 @@ for ol in sommer_ol:
 # Verste tiden på 200 m
 verst_tid_200m = max(sommer_ol, key=lambda ol: ol["vinnertider"]["200 m"])
 print(f"\nVerste tid på 200 m var i {verst_tid_200m['årstall']}: {verst_tid_200m['vinnertider']['200 m']} s")
+best_tid_200m = min(sommer_ol, key=lambda ol: ol["vinnertider"]["200 m"])
+print(f"\nVerste tid på 200 m var i {best_tid_200m['årstall']}: {best_tid_200m['vinnertider']['200 m']} s")
