@@ -1,0 +1,13 @@
+Dyr
+│
+├── Pattedyr
+│      ├── egenskap: pelsfarge
+│      └── metode: lyder()
+│
+└── Fugl
+       ├── egenskap: vingespenn
+       └── metode: fly()
+Mat
+├── egenskap: navn
+├── egenskap: næringsverdi
+└── metode: beskrivelse()
